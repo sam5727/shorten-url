@@ -7,7 +7,7 @@ router = APIRouter(
     tags=['Register']
 )
 
-@router.post('/', status_code=status.HTTP_200_OK)
+@router.post('/', status_code=status.HTTP_200_OK, response_model=schemas.ShownUrl)
 def get_shorten_url(request: schemas.Url, response: Response, db: Session = Depends(database.get_db)):
     new_shorten = db.query(models.Url).filter(models.Url.original_url == request.original_url).first()
     if not new_shorten:
