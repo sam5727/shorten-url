@@ -9,7 +9,7 @@ alphabet = string.ascii_letters + '0123456789'
 def get_url(request: schemas.Url, response: Response, db: Session):
     ori_url = request.original_url
     if not check_is_valid(ori_url):
-        raise HTTPException(status_code=status.HTTP_406_NOT_ACCEPTABLE, detail=f'{ori_url} is invalid URL')
+        raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_ENTITY, detail=f'{ori_url} is invalid URL')
 
     shortened_url = db.query(models.Url).filter(models.Url.original_url == ori_url).first()
     if shortened_url:

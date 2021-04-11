@@ -9,7 +9,7 @@ def test_register_invalid_url():
         '/register/',
         json={'original_url': 'just_an_invalid_url'}
     )
-    assert response.status_code == status.HTTP_406_NOT_ACCEPTABLE
+    assert response.status_code == status.HTTP_422_UNPROCESSABLE_ENTITY
 
 def test_register_url():
     response = client.post(
