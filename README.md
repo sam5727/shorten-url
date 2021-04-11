@@ -10,9 +10,9 @@ cd shorten-url
 ```
 ###  Activate virtual environment
 ```bash
-python -m venv shoten-url-env
+python -m venv shorten-url-env
 # On Windows, run
-# shoten-url-env\Scripts\activate.bat
+# shorten-url-env\Scripts\activate.bat
 # On Unix or MacOS, run
 # source tutorial-env/bin/activate
 ```
