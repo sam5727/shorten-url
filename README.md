@@ -14,7 +14,7 @@ python -m venv shorten-url-env
 # On Windows, run
 # shorten-url-env\Scripts\activate.bat
 # On Unix or MacOS, run
-# source tutorial-env/bin/activate
+# source shorten-url-env/bin/activate
 ```
 Check more detail on [venv](https://docs.python.org/3/tutorial/venv.html)
 
