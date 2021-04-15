@@ -14,7 +14,7 @@ def get_url(request: schemas.Url, response: Response, db: Session):
     shortened_url = db.query(models.Url).filter(models.Url.original_url == ori_url).first()
     if shortened_url:
         response.status_code = status.HTTP_200_OK
-        return shortened_url
+        return {'shortened_url': 'http://localhost:8000/' + shortened_url}
     while shortened_url is None or db.query(models.Url).filter(models.Url.shorten_url == shortened_url).first() is not None:
         shortened_url = get_shortened_url()
     new_shortened = models.Url(original_url=ori_url, shorten_url=shortened_url)
